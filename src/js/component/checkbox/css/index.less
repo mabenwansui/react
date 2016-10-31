@@ -1,0 +1,52 @@
+.lt-checkboxui{
+  input{visibility: hidden;}
+  i{
+    position: relative;
+    top: 1px;
+    &:before{
+      content: '';
+      position: absolute;
+      z-index: 2;
+      transform: rotate(45deg) scale(0, 0);
+      transition: transform .3s cubic-bezier(0.42, 0, 0, 2);
+    }
+    &:after{
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 12px;
+      height: 12px;
+      border: 1px solid #ccc;
+      border-radius: 2px;
+    }
+  }
+  &.active{
+    i:before{
+      content: '';
+      position: absolute;
+      z-index: 2;
+      width: 3px;
+      height: 8px;
+      left: 5px;
+      top: 1px;
+      border: 2px solid #ffffff;
+      border-left: 0;
+      border-top: 0;
+      transform: rotate(45deg) scale(1, 1);    
+    }
+    i:after{
+      background: #2db7f5;
+      border: 1px solid #2db7f5;
+    }  
+  }
+  &.disabled{
+    i:before{}
+    i:after{
+      background: #ccc;
+      border-color: #ccc;
+    }
+  }
+}
+
+   
